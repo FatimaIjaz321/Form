@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Form</title>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+
+   
+    <style>
+        .image {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Form</h1>
+        <nav>
+            <ul>
+
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome to My Form</h2>
+            <p>You can search image here </p>
+        </section>
+
+        <section>
+            <h2>Search</h2>
+            <form id="searchForm">
+
+                <input type="text" id="searchInput" placeholder="Search Image Here">
+                <button type="submit">Search</button>
+            </form>
+            <div id="searchResults"></div>
+        </section>
+
+    </main>
+    <div class="image">
+        <img src="image/image.png" alt="Image" />
+    </div>
+    <footer>
+        <p>&copy; 2023 My Form. All rights reserved.</p>
+    </footer>
+    <script src="JavaScript.js"></script>
+</body>
+</html>

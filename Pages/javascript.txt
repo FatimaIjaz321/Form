@@ -1,0 +1,43 @@
+document.getElementById("searchForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+    var searchQuery = document.getElementById("searchInput").value;
+    var searchResultsContainer = document.getElementById("searchResults");
+    // Clear previous results
+    searchResultsContainer.innerHTML = "";
+    // Simulating a search operation with a hardcoded array of image URLs and captions
+    var searchResults = [
+        { imageUrl: "image.png", caption: "Image 1" },
+      
+    ];
+
+    var matchingResults = searchResults.filter(function (result) {
+        // Performing  search logic here
+        // For example, check if the search query is present in the caption or any other relevant property
+        return result.caption.toLowerCase().includes(searchQuery.toLowerCase());
+    });
+
+    // Display search results
+    if (matchingResults.length > 0) {
+        matchingResults.forEach(function (result) {
+            var resultItem = document.createElement("div");
+            resultItem.classList.add("search-result");
+
+            var image = document.createElement("img");
+            image.src = result.imageUrl;
+            image.alt = result.caption;
+
+            var caption = document.createElement("p");
+            caption.textContent = result.caption;
+
+            resultItem.appendChild(image);
+            resultItem.appendChild(caption);
+
+            searchResultsContainer.appendChild(resultItem);
+        });
+    } else {
+        var noResults = document.createElement("p");
+        noResults.textContent = "No results found.";
+
+        searchResultsContainer.appendChild(noResults);
+    }
+});
